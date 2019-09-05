@@ -5,5 +5,6 @@ fn main() {
     crate::sound::instrument::show();
     let mut v = crate::sound::Vegetable::new("aaa");
     crate::voice::hello_voice();
+    crate::voice::hello_voice();
     println!("{}",v.name)
 }
