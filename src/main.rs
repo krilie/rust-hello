@@ -1,6 +1,6 @@
 fn main() {
     let mut i = 0;
-    loop {
+    while true {
         i+=1;
         println!("{}",i)
     }
