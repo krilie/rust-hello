@@ -1,12 +1,10 @@
 fn main() {
-    let mut v = vec![1, 2, 3, 4, 5];
-    loop {
-        match v.pop() {
-            Some(x) => println!("{}", x),
-            None => break,
-        }
-    }
-    while let Some(x) = v.pop(){
-        println!("{}",x)
-    }
+    let x = true;
+    let y: bool = false;
+    let x = 5;
+    if x > 1 {
+        println!("x val {}", x)
+    };
+    println!("{}", x as i32);
+    println!("{}", y as i32);
 }
