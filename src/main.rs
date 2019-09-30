@@ -1,11 +1,10 @@
+fn is_true() -> bool {
+    true
+}
+fn true_maker() -> fn() -> bool {
+    is_true
+}
 fn main() {
-    let v = "hello world!";
-    assert_eq!(v,"hello world!");
-    let v = "hello rust!";
-    assert_eq!(v,"hello rust!");
-    {
-        let v = "hello world!";
-        assert_eq!(v,"hello world!");
-    }
-    assert_eq!(v,"hello rust!");
+    assert_eq!(true_maker()(), true);
+    print!("{}",true_maker()())
 }
