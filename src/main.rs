@@ -1,10 +1,7 @@
-fn is_true() -> bool {
-    true
+const fn init_len()->usize {
+    return 5;
 }
-fn true_maker() -> fn() -> bool {
-    is_true
-}
-fn main() {
-    assert_eq!(true_maker()(), true);
-    print!("{}",true_maker()())
+fn main(){
+    let arr = [0;init_len()];
+    print!("{}",arr.len())
 }
