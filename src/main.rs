@@ -1,10 +1,11 @@
-mod sound;
-mod voice;
 fn main() {
-    println!("Hello, world!");
-    crate::sound::instrument::show();
-    let mut v = crate::sound::Vegetable::new("aaa");
-    crate::voice::hello_voice();
-    crate::voice::hello_voice();
-    println!("{}",v.name)
+    let v = "hello world!";
+    assert_eq!(v,"hello world!");
+    let v = "hello rust!";
+    assert_eq!(v,"hello rust!");
+    {
+        let v = "hello world!";
+        assert_eq!(v,"hello world!");
+    }
+    assert_eq!(v,"hello rust!");
 }
