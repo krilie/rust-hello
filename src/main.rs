@@ -1,10 +1,8 @@
-fn closure_math<F: Fn() -> i32>(op: F) -> i32 {
-    op()
+fn two_times_impl() -> impl Fn(i32) -> i32 {
+    let i = 2;
+    move |j| j * i
 }
-
 fn main() {
-    let a = 2;
-    let b = 3;
-    println!("{}", closure_math(|| a + b));
-    println!("{}", closure_math(|| a * b));
+    let result = two_times_impl();
+    println!("{}", result(23i32));
 }
