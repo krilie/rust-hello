@@ -1,9 +1,5 @@
-fn two_times_impl() -> impl Fn(i32) -> i32 {
-    let i = 2;
-    move |j| j * i
-}
 fn main() {
-    let result = two_times_impl();
-    println!("{}", result(23i32));
-    println!("{}", two_times_impl()(23i32));
+    let n = 13f32;
+    let big_n = if n < 10f32 && n > -10f32 { 10f32 * n } else { n / 2f32 };
+    println!("{}", big_n)
 }
