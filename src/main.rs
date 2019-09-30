@@ -1,5 +1,7 @@
 fn main() {
-    for n in 1..10000000 {
-        println!("{}",n);
+    let mut i = 0;
+    loop {
+        i+=1;
+        println!("{}",i)
     }
 }
