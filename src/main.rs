@@ -5,4 +5,5 @@ fn main() {
     learn::close_fn_test();
     learn::close_fn_test2();
     learn::fn_test::test_1();
+    learn::fn_test::test_2();
 }
