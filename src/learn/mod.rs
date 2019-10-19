@@ -1,6 +1,7 @@
 pub mod fn_test;
 pub mod fn_close_param_test;
 pub mod fn_return_close;
+pub mod fn_close_trait_test;
 
 pub fn hello_learn() {
     println!("hello_learn");
