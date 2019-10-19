@@ -8,4 +8,5 @@ fn main() {
     learn::fn_test::test_2();
     learn::fn_test::test_3();
     learn::fn_close_param_test::test_1();
+    learn::fn_return_close::test_1();
 }
