@@ -13,4 +13,5 @@ fn main() {
     learn::fn_close_trait_test::test_1();
     learn::channel_test::test();
     learn::base_line_2_2::test();
+//    learn::rust_2_3::test(); // error[E0070]: invalid left-hand side expression
 }
