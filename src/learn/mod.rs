@@ -3,6 +3,7 @@ pub mod fn_close_param_test;
 pub mod fn_return_close;
 pub mod fn_close_trait_test;
 pub mod channel_test;
+pub mod base_line_2_2;
 
 pub fn hello_learn() {
     println!("hello_learn");

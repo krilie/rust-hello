@@ -12,4 +12,5 @@ fn main() {
     learn::fn_return_close::test_2();
     learn::fn_close_trait_test::test_1();
     learn::channel_test::test();
+    learn::base_line_2_2::test();
 }
