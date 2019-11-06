@@ -17,6 +17,9 @@ pub fn test(){
 // test2
 fn is_true()->bool{true}
 fn true_maker()->fn()->bool{is_true}
+const fn init_len()->usize {5}
 pub fn test2(){
-    println!("{}",true_maker()());
+    println!("{} {}",true_maker()(),init_len());
+    let arr = [0,init_len()];
+    println!("{}",arr.len());
 }
