@@ -1,4 +1,5 @@
 mod learn;
+mod learn2;
 
 fn main() {
     learn::hello_learn();
@@ -15,4 +16,5 @@ fn main() {
     learn::base_line_2_2::test();
 //    learn::rust_2_3::test(); // error[E0070]: invalid left-hand side expression
     learn::mut_un_mut_2_4::test();
+    learn2::learn2_1::test();
 }
