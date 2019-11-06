@@ -13,3 +13,10 @@ pub fn test(){
     println!("{}",math(sum,a,b));
     println!("{}",math(product,a,b));
 }
+
+// test2
+fn is_true()->bool{true}
+fn true_maker()->fn()->bool{is_true}
+pub fn test2(){
+    println!("{}",true_maker()());
+}

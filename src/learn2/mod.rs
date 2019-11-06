@@ -10,4 +10,5 @@ pub fn test(){
     println!("{}",fizz_buzz::fizz_buzz(14));
     scope_test::test();
     func_ptr::test();
+    func_ptr::test2();
 }
