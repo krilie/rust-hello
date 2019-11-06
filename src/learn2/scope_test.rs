@@ -1,3 +1,4 @@
+// 静态作用域，词法作用域
 pub fn test(){
     let v="hello world";
     assert_eq!(v,"hello world");
