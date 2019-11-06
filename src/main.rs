@@ -1,5 +1,6 @@
 mod learn;
 mod learn2;
+mod procedure_ctl;
 
 fn main() {
     learn::hello_learn();
@@ -18,4 +19,5 @@ fn main() {
     learn::mut_un_mut_2_4::test();
     // test learn 2
     learn2::test();
+    procedure_ctl::test();
 }
