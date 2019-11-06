@@ -19,13 +19,14 @@ struct Apple {
     pub name: &'static str,
     pub gender: u32,
 }
-
 impl Apple {
-    pub fn show(&self){
-        println!("==+++{:?}",self);
+    pub fn static_show(){
+        println!("apple hellll")
+    }
+    pub fn show(&self) {
+        println!("==+++{:?}", self);
     }
 }
-
 pub fn test2() {
     let a = Apple {
         name: "aa",
@@ -33,6 +34,17 @@ pub fn test2() {
     };
     println!("{:?}", a);
     a.show();
+    Apple::static_show();
+    //++++++++++++++++++++
+}
+//==================________
+#[derive(Debug)]
+struct Color(i32,i32,i32);
+pub fn test3(){
+    let color=Color(1,2,3);
+    println!("{:?}-{}-{}",color,color.0,color.2);
+    let color2=Color{0:1,1:2,2:30};
+    println!("{:?}-{}-{}",color2,color2.0,color2.2)
 }
 // 枚举体
 

@@ -9,4 +9,5 @@ pub fn test() {
     str_type::test();
     multi_type_test::test();
     multi_type_test::test2();
+    multi_type_test::test3();
 }
