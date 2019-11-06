@@ -8,4 +8,5 @@ pub fn test() {
     match_ctl::test();
     match_ctl::test2();
     match_ctl::test3();
+    match_ctl::test4();
 }
