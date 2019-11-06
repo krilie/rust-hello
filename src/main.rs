@@ -1,6 +1,7 @@
 mod learn;
 mod learn2;
 mod procedure_ctl;
+mod range_value_test;
 
 fn main() {
     learn::hello_learn();
@@ -20,4 +21,5 @@ fn main() {
     // test learn 2
     learn2::test();
     procedure_ctl::test();
+    range_value_test::test();
 }
