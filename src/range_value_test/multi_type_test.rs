@@ -46,6 +46,9 @@ pub fn test3(){
     let color2=Color{0:1,1:2,2:30};
     println!("{:?}-{}-{}",color2,color2.0,color2.2)
 }
+//+++++++++++++============
+
+
 // 枚举体
 
 // 联合体
