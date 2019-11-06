@@ -5,4 +5,5 @@ pub fn test(){
     println!("{:?}",other);
     let other = place2;
     println!("{:?}",other);
+//    println!("{:?}",place2);
 }
