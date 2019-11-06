@@ -7,20 +7,18 @@ pub mod base_line_2_2;
 pub mod rust_2_3;
 pub mod mut_un_mut_2_4;
 
-pub fn hello_learn() {
-    println!("hello_learn");
-}
-
-// 显示指定闭包类型
-pub fn close_fn_test() {
-    let env_var = 1;
-    let c: Box<dyn Fn() -> i32> = Box::new(|| env_var + 2);
-    println!("{}",c());
-}
-
-// 显示指定闭包类型
-pub fn close_fn_test2() {
-    let env_var = 3;
-    let c: Box<dyn Fn() -> i32> = Box::new(|| env_var + 2);
-    println!("{}",c());
+pub fn test(){
+    rust_2_3::hello_learn();
+    rust_2_3::close_fn_test();
+    rust_2_3::close_fn_test2();
+    fn_test::test_1();
+    fn_test::test_2();
+    fn_test::test_3();
+    fn_close_param_test::test_1();
+    fn_return_close::test_1();
+    fn_return_close::test_2();
+    fn_close_trait_test::test_1();
+    channel_test::test();
+    base_line_2_2::test();
+    mut_un_mut_2_4::test();
 }
