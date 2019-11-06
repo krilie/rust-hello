@@ -7,4 +7,5 @@ pub fn test() {
     circle_ctl::test();
     match_ctl::test();
     match_ctl::test2();
+    match_ctl::test3();
 }

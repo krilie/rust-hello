@@ -9,9 +9,22 @@ pub fn test() {
     }
 }
 
-pub fn test2(){
+pub fn test2() {
     let boolean = true;
     let mut binary = 0;
-    if let true = boolean {binary = 1}
-    println!("{}",binary);
+    if let true = boolean {
+        binary = 1
+    }
+    println!("{}", binary);
+}
+
+pub fn test3() {
+    println!("===============");
+    let mut v = vec![1, 2, 3, 4];
+    loop {
+        match v.pop() {
+            Some(x) => println!("{}", x),
+            None => break,
+        }
+    }
 }
