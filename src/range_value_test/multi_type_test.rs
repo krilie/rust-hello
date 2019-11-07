@@ -72,6 +72,16 @@ enum Number{
     #[allow(dead_code)]
     Two,
 }
+
+#[derive(Debug)]
+enum Colors{Red=0xff0000,Green=0x00ff00,Blue=0x0000ff,}
+
+#[derive(Debug)]
+enum IpAddr{
+    V4(u8,u8,u8,u8),
+    V6(String),
+}
+
 pub fn test6(){
     let a = Number::One;
     match a {
@@ -79,6 +89,11 @@ pub fn test6(){
         Number::Zero => println!("0"),
         Number::Two => println!("2"),
     }
+    let red = Colors::Red;
+    println!("{:?}",red);
+    let  x :fn(u8,u8,u8,u8)->IpAddr = IpAddr::V4;
+    let y :fn(String) ->IpAddr = IpAddr::V6;
+    let home = x(127,0,0,1);
+    println!("{:?}",home);
 }
-
 // 联合体
