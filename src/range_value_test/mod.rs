@@ -11,4 +11,6 @@ pub fn test() {
     multi_type_test::test2();
     multi_type_test::test3();
     multi_type_test::test4();
+    multi_type_test::test5();
+    multi_type_test::test6();
 }

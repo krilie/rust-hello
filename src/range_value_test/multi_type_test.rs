@@ -56,6 +56,29 @@ pub fn test4(){
     let int2 :Int = 324;
     println!("{}",int2);
 }
+//--------------------
+#[derive(Debug)]
+struct Empty;
+pub fn test5(){
+  let x = Empty;
+    println!("{:?}",x);
+}
 // 枚举体
+#[derive(Debug)]
+enum Number{
+    #[allow(dead_code)]
+    Zero,
+    One,
+    #[allow(dead_code)]
+    Two,
+}
+pub fn test6(){
+    let a = Number::One;
+    match a {
+        o@ Number::One => println!("{:?}",o),
+        Number::Zero => println!("0"),
+        Number::Two => println!("2"),
+    }
+}
 
 // 联合体
