@@ -20,4 +20,5 @@ pub fn test() {
     multi_type_test::coll::test_link_list();
     multi_type_test::coll::test_hash_map();
     multi_type_test::coll::test_btree_map();
+    multi_type_test::coll::test_set();
 }

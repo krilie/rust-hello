@@ -110,6 +110,7 @@ pub fn test7() {
     }
 }
 pub mod coll {
+    use std::collections::{HashSet, BTreeSet};
 
     // 联合体
     // vec vecDeque linkedList
@@ -152,5 +153,15 @@ pub mod coll {
         println!("{:?}",hmap);
     }
     // HashSet BTreeSet
+    pub fn test_set(){
+        let mut hbooks = HashSet::new();
+        hbooks.insert("asf");
+        hbooks.insert("asf");
+        hbooks.insert("aaa");
+        println!("{:?}",hbooks);
+        let mut hhbooks = BTreeSet::new();
+        hhbooks.insert(23);
+        println!("{:?}",hhbooks);
+    }
     // BinaryHeap
 }
