@@ -137,6 +137,20 @@ pub mod coll {
         println!("{:?}",list);
     }
     // HashMap BTreeMap
+    pub fn test_hash_map(){
+        use std::collections::HashMap;
+        let mut hmap = HashMap::new();
+        hmap.insert(3,"aas");
+        hmap.insert(453,"aaa");
+        println!("{:?}",hmap);
+    }
+    pub fn test_btree_map(){
+        use std::collections::BTreeMap;
+        let mut hmap = BTreeMap::new();
+        hmap.insert(3,"aas");
+        hmap.insert(453,"aaa");
+        println!("{:?}",hmap);
+    }
     // HashSet BTreeSet
     // BinaryHeap
 }
