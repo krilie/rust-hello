@@ -5,7 +5,7 @@ pub fn test() {
         y: f64,
     }
     let box_point = Box::new(Point { x: 0.0, y: 0.0 });
-    let unbox_point: Point = *box_point;
+    let unbox_point: Point = *box_point; // 所有权转移
     assert_eq!(unbox_point, Point { x: 0.0, y: 0.0 });
     println!("{:?}",unbox_point);
 }
