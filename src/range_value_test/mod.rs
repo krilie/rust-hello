@@ -3,6 +3,7 @@ mod range_test;
 mod slice_type;
 mod str_type;
 mod multi_type_test;
+mod box_ptr;
 
 pub fn test() {
     range_test::test();
@@ -22,4 +23,5 @@ pub fn test() {
     multi_type_test::coll::test_btree_map();
     multi_type_test::coll::test_set();
     multi_type_test::coll::test_b_heap();
+    box_ptr::test();
 }
