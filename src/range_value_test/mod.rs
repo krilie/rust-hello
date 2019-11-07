@@ -1,3 +1,4 @@
+
 mod range_test;
 mod slice_type;
 mod str_type;
@@ -14,4 +15,7 @@ pub fn test() {
     multi_type_test::test5();
     multi_type_test::test6();
     multi_type_test::test7();
+    multi_type_test::coll::test1();
+    multi_type_test::coll::test2();
+    multi_type_test::coll::test_link_list();
 }
