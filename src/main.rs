@@ -3,6 +3,7 @@ mod learn2;
 mod procedure_ctl;
 mod range_value_test;
 mod piston_window_test;
+mod trait_test;
 
 fn main() {
     learn::test();
