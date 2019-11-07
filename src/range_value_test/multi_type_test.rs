@@ -110,7 +110,7 @@ pub fn test7() {
     }
 }
 pub mod coll {
-    use std::collections::{HashSet, BTreeSet};
+    use std::collections::{HashSet, BTreeSet, BinaryHeap};
 
     // 联合体
     // vec vecDeque linkedList
@@ -164,4 +164,14 @@ pub mod coll {
         println!("{:?}",hhbooks);
     }
     // BinaryHeap
+    pub fn test_b_heap(){
+        let mut heap = BinaryHeap::new();
+        println!("{:?}",heap);
+        let arr = [34,243,34,2,342,45,656,456];
+        for &i in arr.iter() {
+            heap.push(i);
+        }
+        println!("{:?}",heap.pop());
+        println!("{:?}",heap);
+    }
 }

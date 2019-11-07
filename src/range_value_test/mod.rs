@@ -21,4 +21,5 @@ pub fn test() {
     multi_type_test::coll::test_hash_map();
     multi_type_test::coll::test_btree_map();
     multi_type_test::coll::test_set();
+    multi_type_test::coll::test_b_heap();
 }
