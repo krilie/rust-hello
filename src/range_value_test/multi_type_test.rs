@@ -1,3 +1,4 @@
+
 // 元组
 fn move_coords(x: (i32, i32)) -> (i32, i32) {
     (x.0 + 1, x.1 + 2)
@@ -95,5 +96,12 @@ pub fn test6(){
     let y :fn(String) ->IpAddr = IpAddr::V6;
     let home = x(127,0,0,1);
     println!("{:?}",home);
+}
+pub fn test7(){
+    let s = &Some("hello".to_string());
+    match s {
+        Some(x)=>println!("{}",x),
+        _ =>println!("no some"),
+    }
 }
 // 联合体
