@@ -47,8 +47,15 @@ pub fn test3(){
     println!("{:?}-{}-{}",color2,color2.0,color2.2)
 }
 //+++++++++++++============
-
-
+#[derive(Debug)]
+struct Integer(u32);
+type Int = i32;
+pub fn test4(){
+    let int = Integer(32);
+    println!("{:?},{}",int,int.0);
+    let int2 :Int = 324;
+    println!("{}",int2);
+}
 // 枚举体
 
 // 联合体
