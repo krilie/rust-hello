@@ -30,6 +30,7 @@ pub fn test() {
 
 pub mod debug_trait {
     use std::fmt::*;
+    //#[derive(Debug)]
     struct Point {
         x: i32,
         y: i32,
