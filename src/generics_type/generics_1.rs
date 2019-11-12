@@ -10,4 +10,7 @@ fn match_option<T: Debug>(o: Option<T>) {
 pub fn test() {
     let a = Some(3);
     match_option(a);
+    match_option(Some("some"));
+    let b: Option<i8> = None;
+    match_option(b);
 }
