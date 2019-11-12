@@ -24,3 +24,17 @@ pub fn test3() {
     println!("{:?}", std::mem::size_of::<Void>());
     println!("{:?}", std::mem::size_of::<[(); 10]>());
 }
+
+pub fn test4() {
+    fn foo() -> ! {
+        loop {
+            println!("jh")
+        }
+    }
+    let i = if false {
+        foo();
+    } else {
+        100
+    };
+    println!("{:?}", i);
+}
