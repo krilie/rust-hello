@@ -8,4 +8,5 @@ pub fn test(){
     string_test::test4();
 //    string_test::test5();
     generics_type::test();
+    generics_type::test2();
 }

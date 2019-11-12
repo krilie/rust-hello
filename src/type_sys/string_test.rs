@@ -14,8 +14,11 @@ pub fn test3() {
     enum Void {}
     struct Foo;
     struct Baz {
+        #[allow(dead_code)]
         foo: Foo,
+        #[allow(dead_code)]
         qux: (),
+        #[allow(dead_code)]
         baz: [u8; 0],
     }
     println!("{:?}", std::mem::size_of::<()>());
