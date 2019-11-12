@@ -25,3 +25,33 @@ pub fn test2() {
     let c = Point::new("12", "32");
     println!("{:?}", c);
 }
+
+pub mod generics_test {
+    #[derive(Debug, PartialEq)]
+    struct Foo(i32);
+    #[derive(Debug, PartialEq)]
+    struct Bar(i32, i32);
+    trait Inst {
+        fn new(i: i32) -> Self;
+    }
+    impl Inst for Foo {
+        fn new(i: i32) -> Foo {
+            Foo(i)
+        }
+    }
+    impl Inst for Bar {
+        fn new(i: i32) -> Bar {
+            Bar(i, i + 10)
+        }
+    }
+    fn foobar<T: Inst>(i: i32) -> T {
+        T::new(i)
+    }
+    // 根据返回类型推测泛型
+    pub fn test() {
+        let f: Foo = foobar(10);
+        println!("{:?}", f);
+        let b: Bar = foobar(20);
+        println!("{:?}", b);
+    }
+}
