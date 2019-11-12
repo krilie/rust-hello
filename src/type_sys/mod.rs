@@ -1,5 +1,7 @@
+
 mod string_test;
 mod generics_type;
+mod add_generics;
 
 pub fn test(){
     string_test::test();
@@ -10,4 +12,5 @@ pub fn test(){
     generics_type::test();
     generics_type::test2();
     generics_type::generics_test::test();
+    add_generics::test();
 }
