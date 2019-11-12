@@ -38,3 +38,13 @@ pub fn test4() {
     };
     println!("{:?}", i);
 }
+
+//pub fn test5() {
+//    enum Void {}
+//    let res: Result<u32, _> = Ok(0);
+//    let Ok(num):Result<u32, _>= match res {
+//        Ok(num) => Ok(num),
+//        _ => Ok(0),
+//    };
+//    println!("{:?}", num);
+//}
