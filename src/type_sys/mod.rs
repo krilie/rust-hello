@@ -1,4 +1,5 @@
 mod string_test;
+mod generics_type;
 
 pub fn test(){
     string_test::test();
@@ -6,4 +7,5 @@ pub fn test(){
     string_test::test3();
     string_test::test4();
 //    string_test::test5();
+    generics_type::test();
 }
