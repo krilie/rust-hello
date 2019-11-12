@@ -5,6 +5,7 @@ mod range_value_test;
 mod piston_window_test;
 mod trait_test;
 mod generics_type;
+mod type_sys;
 
 fn main() {
     learn::test();
@@ -13,4 +14,5 @@ fn main() {
     range_value_test::test();
     //piston_window_test::test();
     generics_type::test();
+    type_sys::test();
 }
