@@ -14,3 +14,10 @@ pub fn test(){
     #[allow(unused_variables)]
     let s = S(2);
 }
+
+pub fn test2(){
+    let x = S(1);
+    println!("{:?}", x);
+    let x = S(2);
+    println!("{:?}", x);
+}
