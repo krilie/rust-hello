@@ -18,4 +18,6 @@ pub fn test(){
     drop_test::test();
     drop_test::test2();
     copy_types::test();
+    copy_types::test2();
+    copy_types::test3();
 }
