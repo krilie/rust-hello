@@ -23,3 +23,10 @@ pub fn test3(){
     println!("{:?}", a);
     println!("{:?}", b);
 }
+
+pub fn test4(){
+    // 可变的
+    let mut x = "hello".to_string();
+    x += " world";
+    println!("{:?}", x);
+}

@@ -4,6 +4,7 @@ mod generics_type;
 mod add_generics;
 mod drop_test;
 mod copy_types;
+mod lifetime;
 
 pub fn test(){
     string_test::test();
@@ -20,4 +21,8 @@ pub fn test(){
     copy_types::test();
     copy_types::test2();
     copy_types::test3();
+    copy_types::test4();
+    lifetime::test();
+    lifetime::test2();
+    lifetime::borrow_test::test();
 }
