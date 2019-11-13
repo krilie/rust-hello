@@ -6,6 +6,7 @@ mod piston_window_test;
 mod trait_test;
 mod generics_type;
 mod type_sys;
+mod comprehensive;
 
 fn main() {
     learn::test();
@@ -15,4 +16,5 @@ fn main() {
     //piston_window_test::test();
     generics_type::test();
     type_sys::test();
+    comprehensive::test();
 }
