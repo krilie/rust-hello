@@ -8,6 +8,7 @@ mod generics_type;
 mod type_sys;
 mod comprehensive;
 mod borrow_test;
+mod fun_closure_iter;
 
 fn main() {
     learn::test();
@@ -19,4 +20,5 @@ fn main() {
     type_sys::test();
     comprehensive::test();
     borrow_test::test();
+    fun_closure_iter::test();
 }
