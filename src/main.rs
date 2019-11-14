@@ -7,6 +7,7 @@ mod trait_test;
 mod generics_type;
 mod type_sys;
 mod comprehensive;
+mod borrow_test;
 
 fn main() {
     learn::test();
@@ -17,4 +18,5 @@ fn main() {
     generics_type::test();
     type_sys::test();
     comprehensive::test();
+    borrow_test::test();
 }
