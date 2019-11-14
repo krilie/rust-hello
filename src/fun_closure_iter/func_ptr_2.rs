@@ -4,6 +4,7 @@ fn sum(a:i32,b:i32) ->i32 {
 fn product(a:i32,b:i32) ->i32 {
     a*b
 }
+#[allow(dead_code)]
 type MathOp = fn(i32,i32)->i32;
 fn math(op:&str,a:i32,b:i32)->i32{
     match op{
