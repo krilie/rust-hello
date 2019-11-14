@@ -1,5 +1,5 @@
 #[allow(dead_code)]
-fn func_name(arg1: u32, arg2: String) -> Vec<u32> {
+fn func_name(_arg1: u32, _arg2: String) -> Vec<u32> {
     vec![1, 2, 3]
 }
 
@@ -11,3 +11,7 @@ fn r#match(needle: &str, haystack: &str) -> bool {
 pub fn test(){
     println!("{:?}", r#match("foo", "foobar"));
 }
+
+
+
+
