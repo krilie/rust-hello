@@ -19,3 +19,11 @@ pub fn test2() {
         println!("idx:{:?},val:{:?}", idx, val);
     }
 }
+
+pub fn test3(){
+    let a = vec![1,2,3];
+    let mut iter = a.iter().rev();
+    for x in iter.next() {
+        println!("{:?}", x);
+    }
+}
