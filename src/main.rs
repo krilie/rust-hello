@@ -12,6 +12,7 @@ mod trait_test;
 mod type_sys;
 mod arch_test;
 mod robust_test;
+mod thread_test;
 
 fn main() {
     learn::test();
@@ -28,4 +29,5 @@ fn main() {
     iter_test::test();
     arch_test::test();
     robust_test::test();
+    thread_test::test();
 }
