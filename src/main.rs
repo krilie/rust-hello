@@ -10,6 +10,7 @@ mod procedure_ctl;
 mod range_value_test;
 mod trait_test;
 mod type_sys;
+mod arch_test;
 
 fn main() {
     learn::test();
@@ -24,4 +25,5 @@ fn main() {
     fun_closure_iter::test();
     trait_test::test();
     iter_test::test();
+    arch_test::test();
 }
