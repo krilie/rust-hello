@@ -9,6 +9,7 @@ mod type_sys;
 mod comprehensive;
 mod borrow_test;
 mod fun_closure_iter;
+mod iter_test;
 
 fn main() {
     learn::test();
@@ -22,4 +23,5 @@ fn main() {
     borrow_test::test();
     fun_closure_iter::test();
     trait_test::test();
+    iter_test::test();
 }
