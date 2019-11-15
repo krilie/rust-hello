@@ -11,6 +11,7 @@ mod range_value_test;
 mod trait_test;
 mod type_sys;
 mod arch_test;
+mod robust_test;
 
 fn main() {
     learn::test();
@@ -26,4 +27,5 @@ fn main() {
     trait_test::test();
     iter_test::test();
     arch_test::test();
+    robust_test::test();
 }
