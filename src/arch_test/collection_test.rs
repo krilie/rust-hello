@@ -9,3 +9,11 @@ pub fn test() {
     println!("{:?}", tao.is_lowercase());
     println!("{:?}", tao.is_alphabetic());
 }
+
+pub fn test2(){
+    let mut a = String::from("foo工");
+    println!("{:p}", a.as_ptr());
+    println!("{:p}", &a);
+    a.reserve(10);
+    println!("{:?}", a.capacity());
+}

@@ -7,4 +7,5 @@ pub fn test(){
     arch_test::test();
     builder_pattern::test();
     collection_test::test();
+    collection_test::test2();
 }
