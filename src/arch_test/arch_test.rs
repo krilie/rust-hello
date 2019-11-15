@@ -14,4 +14,3 @@ pub fn test() {
     println!("{:?}", book);
     println!("{:?}", book2);
 }
-
