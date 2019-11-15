@@ -14,7 +14,7 @@ fn it_works(){
 
 pub mod test2{
     #[allow(dead_code)]
-    use linked_list;
+    
     #[test]
     fn test(){
 
