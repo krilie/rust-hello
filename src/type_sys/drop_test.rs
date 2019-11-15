@@ -3,10 +3,10 @@ use std::ops::Drop;
 struct S(i32);
 impl Drop for S {
     fn drop(&mut self) {
-       println!("drop {}",self.0);
+        println!("drop {}", self.0);
     }
 }
-pub fn test(){
+pub fn test() {
     {
         #[allow(unused_variables)]
         let s = S(1);
@@ -15,7 +15,7 @@ pub fn test(){
     let s = S(2);
 }
 
-pub fn test2(){
+pub fn test2() {
     let x = S(1);
     println!("{:?}", x);
     let x = S(2);

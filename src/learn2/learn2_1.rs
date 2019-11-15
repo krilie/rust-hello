@@ -1,9 +1,9 @@
-pub fn test(){
+pub fn test() {
     let place1 = "hello";
-    let place2 ="hello".to_string();
+    let place2 = "hello".to_string();
     let other = place1;
-    println!("{:?}",other);
+    println!("{:?}", other);
     let other = place2;
-    println!("{:?}",other);
-//    println!("{:?}",place2);
+    println!("{:?}", other);
+    //    println!("{:?}",place2);
 }

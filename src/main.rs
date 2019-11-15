@@ -1,15 +1,15 @@
+mod borrow_test;
+mod comprehensive;
+mod fun_closure_iter;
+mod generics_type;
+mod iter_test;
 mod learn;
 mod learn2;
+mod piston_window_test;
 mod procedure_ctl;
 mod range_value_test;
-mod piston_window_test;
 mod trait_test;
-mod generics_type;
 mod type_sys;
-mod comprehensive;
-mod borrow_test;
-mod fun_closure_iter;
-mod iter_test;
 
 fn main() {
     learn::test();

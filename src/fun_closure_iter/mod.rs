@@ -1,10 +1,10 @@
-mod func_define;
-mod func_mut;
-mod func_for_struct;
-mod func_ptr_2;
 mod closure_test;
+mod func_define;
+mod func_for_struct;
+mod func_mut;
+mod func_ptr_2;
 
-pub fn test(){
+pub fn test() {
     func_define::test();
     func_mut::test();
     func_mut::test2();

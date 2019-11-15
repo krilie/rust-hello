@@ -1,5 +1,5 @@
 mod bubble_sort;
 
-pub fn test(){
+pub fn test() {
     bubble_sort::test();
 }

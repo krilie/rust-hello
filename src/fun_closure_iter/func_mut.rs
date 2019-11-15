@@ -43,11 +43,13 @@ pub fn test4() {
     println!("{:?}", g);
 }
 
-pub fn test5(){
+pub fn test5() {
     use std::ops::Mul;
-    fn square<T:Mul<T,Output=T>>(x:T,y:T) ->T{x*y}
-    let a = square(37,41);
-    let b = square(37.2,41.1);
+    fn square<T: Mul<T, Output = T>>(x: T, y: T) -> T {
+        x * y
+    }
+    let a = square(37, 41);
+    let b = square(37.2, 41.1);
     println!("{:?}", a);
     println!("{:?}", b);
 }

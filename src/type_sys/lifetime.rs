@@ -20,11 +20,11 @@ pub mod borrow_test {
         v[0] = 3;
         v
     }
-    fn bar(v:&mut[i32;3]){
-        v[0]=3;
+    fn bar(v: &mut [i32; 3]) {
+        v[0] = 3;
     }
-    pub fn test(){
-        let mut v = [1,2,3];
+    pub fn test() {
+        let mut v = [1, 2, 3];
         foo(v);
         println!("{:?}", v);
         bar(&mut v);

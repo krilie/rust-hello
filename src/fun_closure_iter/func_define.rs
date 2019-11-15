@@ -8,10 +8,6 @@ fn r#match(needle: &str, haystack: &str) -> bool {
     haystack.contains(needle)
 }
 
-pub fn test(){
+pub fn test() {
     println!("{:?}", r#match("foo", "foobar"));
 }
-
-
-
-

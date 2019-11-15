@@ -1,4 +1,3 @@
-
 pub fn test() {
     let truth: &'static str = "一个苹果。。aa";
     let ptr = truth.as_ptr();

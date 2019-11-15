@@ -1,4 +1,3 @@
-
 fn bubble_sort(a: &mut Vec<i32>) {
     let mut n = a.len();
     while n > 0 {
@@ -14,8 +13,8 @@ fn bubble_sort(a: &mut Vec<i32>) {
     }
 }
 
-pub fn test(){
-    let mut a = vec![1,4,2,3,4,3,2,8];
+pub fn test() {
+    let mut a = vec![1, 4, 2, 3, 4, 3, 2, 8];
     bubble_sort(&mut a);
     println!("{:?}", a);
 }
