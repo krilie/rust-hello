@@ -21,4 +21,5 @@ fn main() {
     comprehensive::test();
     borrow_test::test();
     fun_closure_iter::test();
+    trait_test::test();
 }
