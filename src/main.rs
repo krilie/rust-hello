@@ -13,6 +13,7 @@ mod type_sys;
 mod arch_test;
 mod robust_test;
 mod thread_test;
+mod mata_test;
 
 fn main() {
     learn::test();
@@ -30,4 +31,5 @@ fn main() {
     arch_test::test();
     robust_test::test();
     thread_test::test();
+    mata_test::test();
 }
