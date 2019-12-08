@@ -1,13 +1,13 @@
-pub mod fn_test;
-pub mod fn_close_param_test;
-pub mod fn_return_close;
-pub mod fn_close_trait_test;
-pub mod channel_test;
 pub mod base_line_2_2;
-pub mod rust_2_3;
+pub mod channel_test;
+pub mod fn_close_param_test;
+pub mod fn_close_trait_test;
+pub mod fn_return_close;
+pub mod fn_test;
 pub mod mut_un_mut_2_4;
+pub mod rust_2_3;
 
-pub fn test(){
+pub fn test() {
     rust_2_3::hello_learn();
     rust_2_3::close_fn_test();
     rust_2_3::close_fn_test2();

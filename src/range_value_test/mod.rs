@@ -1,9 +1,8 @@
-
+mod box_ptr;
+mod multi_type_test;
 mod range_test;
 mod slice_type;
 mod str_type;
-mod multi_type_test;
-mod box_ptr;
 
 pub fn test() {
     range_test::test();

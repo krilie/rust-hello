@@ -1,7 +1,7 @@
-pub fn test(){
-    let a = std::ops::Range{start:1,end:5};
-    println!("{}",a.start);
+pub fn test() {
+    let a = std::ops::Range { start: 1, end: 5 };
+    println!("{}", a.start);
     for i in a {
-        println!("--{}",i)
+        println!("--{}", i)
     }
 }

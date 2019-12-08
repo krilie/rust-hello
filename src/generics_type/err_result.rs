@@ -7,10 +7,8 @@ pub fn test() {
     println!("{:?}-{:?}", x, e);
 }
 
-
 // 单行注释
 
 /*
 *  aaaaaa bb cc dd
 */
-

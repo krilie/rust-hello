@@ -8,3 +8,5 @@ edition = "2018"
 
 [dependencies]
 piston_window = "0.98.0"
+linked-list = "0.0.3"
+regex = "1.0.5"

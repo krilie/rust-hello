@@ -110,7 +110,7 @@ pub fn test7() {
     }
 }
 pub mod coll {
-    use std::collections::{HashSet, BTreeSet, BinaryHeap};
+    use std::collections::{BTreeSet, BinaryHeap, HashSet};
 
     // 联合体
     // vec vecDeque linkedList
@@ -118,60 +118,62 @@ pub mod coll {
         let mut v1 = vec![];
         v1.push(1);
         v1.push(2);
-        println!("{:?}",v1);
+        println!("{:?}", v1);
     }
-    pub fn test2(){
+    pub fn test2() {
         use std::collections::VecDeque;
         let mut buf = VecDeque::new();
         buf.push_front(1);
         buf.push_front(2);
-        println!("{:?}",buf);
-        println!("{:?}",buf.pop_back());
-        fn hello(){println!("hello")}
+        println!("{:?}", buf);
+        println!("{:?}", buf.pop_back());
+        fn hello() {
+            println!("hello")
+        }
         hello();
     }
-    pub fn test_link_list(){
+    pub fn test_link_list() {
         use std::collections::LinkedList;
         let mut list = LinkedList::new();
         list.push_back('a');
         list.append(&mut list.clone());
-        println!("{:?}",list);
+        println!("{:?}", list);
     }
     // HashMap BTreeMap
-    pub fn test_hash_map(){
+    pub fn test_hash_map() {
         use std::collections::HashMap;
         let mut hmap = HashMap::new();
-        hmap.insert(3,"aas");
-        hmap.insert(453,"aaa");
-        println!("{:?}",hmap);
+        hmap.insert(3, "aas");
+        hmap.insert(453, "aaa");
+        println!("{:?}", hmap);
     }
-    pub fn test_btree_map(){
+    pub fn test_btree_map() {
         use std::collections::BTreeMap;
         let mut hmap = BTreeMap::new();
-        hmap.insert(3,"aas");
-        hmap.insert(453,"aaa");
-        println!("{:?}",hmap);
+        hmap.insert(3, "aas");
+        hmap.insert(453, "aaa");
+        println!("{:?}", hmap);
     }
     // HashSet BTreeSet
-    pub fn test_set(){
+    pub fn test_set() {
         let mut hbooks = HashSet::new();
         hbooks.insert("asf");
         hbooks.insert("asf");
         hbooks.insert("aaa");
-        println!("{:?}",hbooks);
+        println!("{:?}", hbooks);
         let mut hhbooks = BTreeSet::new();
         hhbooks.insert(23);
-        println!("{:?}",hhbooks);
+        println!("{:?}", hhbooks);
     }
     // BinaryHeap
-    pub fn test_b_heap(){
+    pub fn test_b_heap() {
         let mut heap = BinaryHeap::new();
-        println!("{:?}",heap);
-        let arr = [34,243,34,2,342,45,656,456];
+        println!("{:?}", heap);
+        let arr = [34, 243, 34, 2, 342, 45, 656, 456];
         for &i in arr.iter() {
             heap.push(i);
         }
-        println!("{:?}",heap.pop());
-        println!("{:?}",heap);
+        println!("{:?}", heap.pop());
+        println!("{:?}", heap);
     }
 }

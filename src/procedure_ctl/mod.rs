@@ -1,5 +1,5 @@
-mod if_ctl;
 mod circle_ctl;
+mod if_ctl;
 mod match_ctl;
 
 pub fn test() {
