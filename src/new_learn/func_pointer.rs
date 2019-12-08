@@ -48,10 +48,20 @@ pub fn test_if_let() {
 #[test]
 pub fn test_while_let() {
     let mut v = vec![1, 2, 3, 4, 5];
+    let mut v2 = v.clone();
     loop {
         match v.pop() {
             Some(x) => println!("some {}", x),
-            None => println!("none"),
+            None => {
+                println!("none");
+                break;
+            }
         }
     }
+    println!("v2 while let");
+    while let Some(x) = v2.pop() {
+        println!("{}", x);
+    }
 }
+
+
