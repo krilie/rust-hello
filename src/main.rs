@@ -6,6 +6,7 @@ mod piston_window_test;
 mod trait_test;
 mod generics_type;
 mod type_sys;
+mod new_learn;
 
 fn main() {
     learn::test();
