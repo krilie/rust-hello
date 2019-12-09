@@ -69,4 +69,32 @@ fn tuple_ls() {
     println!("{:?}", color);
 }
 
+#[test]
+fn enum_test() {
+    enum Number {
+        Zero,
+        One,
+        Two,
+    }
+    let a = Number::Zero;
+    match a {
+        Number::Zero => println!("0"),
+        Number::One => println!("1"),
+        Number::Two => println!("2"),
+    }
+}
 
+#[test]
+fn vec_test(){
+    let mut v1 = vec![1,2,3,4,5];
+    println!("{:?}", v1.pop());
+}
+#[test]
+fn box_test(){
+    #[derive(PartialEq,Debug)]
+    struct TT(i32,i32);
+    let bb = Box::new(TT(32,32));
+    let pbb = *bb;
+//    println!("{:?}", bb);
+    println!("{}", pbb.0);
+}
