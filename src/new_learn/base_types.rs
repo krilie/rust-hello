@@ -38,3 +38,35 @@ fn raw_ptr_test() {
     }
     println!("x{} y{}", x, y);
 }
+
+#[test]
+fn test_never() {
+    fn foo() -> i32 {
+        let x: ! = {
+            return 13;
+        };
+    }
+    println!("{}", foo());
+}
+
+#[test]
+fn tuple() {
+    fn move_coords(x: (i32, i32)) -> (i32, i32) {
+        return (x.0 + 1, x.1 + 1);
+    }
+    println!("{:?}", move_coords((23, 32)));
+}
+
+#[test]
+fn tuple_ls() {
+    let tuple: (&'static str, i32, char) = ("hello", 5, 'c');
+    println!("{}", tuple.0);
+    println!("{}", tuple.1);
+    println!("{}", tuple.2);
+    #[derive(Debug)]
+    struct Color(i32, i32, i32, i32);
+    let color = Color(1, 2, 3, 4);
+    println!("{:?}", color);
+}
+
+
