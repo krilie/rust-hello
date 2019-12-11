@@ -1,3 +1,4 @@
+
 #[test]
 fn test_type1() {
     let str = "Hello Rust 你";
@@ -48,4 +49,24 @@ fn test() {
         }
     }
     println!("{:?}", Point(1, 2) + Point(2, 3));
+}
+
+#[test]
+pub fn test_trait() {
+    trait Show1 {
+        fn show(&self) {
+            println!("{}", "on show1")
+        }
+    }
+    trait Show2 {
+        fn show(&self) {
+            println!("{}", "on show2")
+        }
+    }
+    struct We { age: i32 }
+    impl Show1 for We {}
+    impl Show2 for We {}
+    let i = We { age: 6 };
+    Show1::show(&i);
+    Show2::show(&i);
 }
