@@ -35,3 +35,17 @@ fn tst() {
     println!("{:?}", Point { x: 1, y: 2 });
     println!("{:?}", Point { x: "hello", y: "world" });
 }
+
+#[test]
+fn test() {
+    use std::ops::Add;
+    #[derive(Debug)]
+    struct Point(i32, i32);
+    impl Add for Point {
+        type Output = Point;
+        fn add(self, rhs: Point) -> Self::Output {
+            Point(self.0 + rhs.0, self.1 + rhs.1)
+        }
+    }
+    println!("{:?}", Point(1, 2) + Point(2, 3));
+}
