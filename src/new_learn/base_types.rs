@@ -39,15 +39,16 @@ fn raw_ptr_test() {
     println!("x{} y{}", x, y);
 }
 
-#[test]
-fn test_never() {
-    fn foo() -> i32 {
-        let x  = {
-            return 13;
-        };
-    }
-    println!("{}", foo());
-}
+//#[test]
+//#[feature(never_type)]
+//fn test_never() {
+//    fn foo() -> i32 {
+//        let x: ! = {
+//            return 13;
+//        };
+//    }
+//    println!("{}", foo());
+//}
 
 #[test]
 fn tuple() {
