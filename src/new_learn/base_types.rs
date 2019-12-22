@@ -42,7 +42,7 @@ fn raw_ptr_test() {
 #[test]
 fn test_never() {
     fn foo() -> i32 {
-        let x: ! = {
+        let x  = {
             return 13;
         };
     }
