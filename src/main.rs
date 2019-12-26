@@ -34,4 +34,5 @@ fn main() {
     thread_test::test();
     mata_test::test();
     new_learn::test();
+    new_learn::test();
 }

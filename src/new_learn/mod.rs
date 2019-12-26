@@ -6,4 +6,5 @@ mod http_test;
 
 pub fn test(){
     thread_test::test();
+    http_test::test_hyper();
 }
