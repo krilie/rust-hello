@@ -1,3 +1,4 @@
+
 #[test]
 fn number_test() {
     println!("{:?}", std::f32::INFINITY);
@@ -5,6 +6,7 @@ fn number_test() {
     println!("{:?}", std::f32::NAN);
     println!("{:?}", std::f32::MIN);
     println!("{:?}", std::f32::MAX);
+    let guid = "852f4dde-4dfa-4874-a9cb-a866eb4a5052 ";
 }
 
 #[test]
