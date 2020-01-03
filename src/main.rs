@@ -15,6 +15,7 @@ mod arch_test;
 mod robust_test;
 mod thread_test;
 mod mata_test;
+mod example_learn;
 
 fn main() {
     learn::test();
