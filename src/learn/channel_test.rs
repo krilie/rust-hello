@@ -1,6 +1,7 @@
 use std::sync::mpsc::sync_channel;
 use std::thread;
 
+#[test]
 pub fn test() {
     let (tx, rx) = sync_channel(1);
     tx.send(1).unwrap();
