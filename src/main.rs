@@ -17,6 +17,7 @@ mod thread_test;
 mod mata_test;
 mod example_learn;
 mod learn3;
+mod six_funcs;
 
 fn main() {
     learn::test();
