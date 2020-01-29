@@ -1,4 +1,4 @@
 #[test]
 pub fn show(){
-    println!("hello")
+    println!("{}","hello")
 }
