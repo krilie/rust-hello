@@ -1,10 +1,9 @@
-extern crate piston_window;
 
-use piston_window::*;
 
 #[allow(dead_code)]
 #[test]
 pub fn test() {
+    use piston_window::{PistonWindow,WindowSettings,rectangle,clear};
     let mut window: PistonWindow = WindowSettings::new("Hello Piston!", [640, 480])
         .exit_on_esc(true)
         .build()

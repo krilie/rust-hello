@@ -11,7 +11,7 @@ fn test_type1() {
 
 #[test]
 fn test_type2() {
-    println!("{:?}", std::mem::size_of::<(i32)>());
+    println!("{:?}", std::mem::size_of::<i32>());
 //    let v: () = vec![];
 }
 
@@ -63,6 +63,7 @@ pub fn test_trait() {
             println!("{}", "on show2")
         }
     }
+    #[warn(dead_code)]
     struct We { age: i32 }
     impl Show1 for We {}
     impl Show2 for We {}

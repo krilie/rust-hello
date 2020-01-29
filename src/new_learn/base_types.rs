@@ -7,6 +7,7 @@ fn number_test() {
     println!("{:?}", std::f32::MIN);
     println!("{:?}", std::f32::MAX);
     let guid = "852f4dde-4dfa-4874-a9cb-a866eb4a5052 ";
+    println!("{}",guid);
 }
 
 #[test]
@@ -74,6 +75,7 @@ fn tuple_ls() {
 
 #[test]
 fn enum_test() {
+    #[warn(dead_code)]
     enum Number {
         Zero,
         One,

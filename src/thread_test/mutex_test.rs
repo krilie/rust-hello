@@ -12,6 +12,6 @@ pub fn test(){
         v.push(child);
     }
     for child in v {
-        child.join();
+        let _ = child.join();
     }
 }
