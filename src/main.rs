@@ -18,6 +18,7 @@ mod mata_test;
 mod example_learn;
 mod learn3;
 mod six_funcs;
+mod test_al;
 
 fn main() {
     learn::test();

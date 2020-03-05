@@ -4,6 +4,7 @@ struct Book<'a> {
     isbn: i32,
     version: i32,
 }
+#[test]
 pub fn test() {
     let book = Book {
         name: "rust language",
