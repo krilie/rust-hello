@@ -37,6 +37,6 @@ fn main() {
     robust_test::test();
     thread_test::test();
     mata_test::test();
-    new_learn::test();
-    new_learn::test();
+    // new_learn::test();
+    test_al::test();
 }
