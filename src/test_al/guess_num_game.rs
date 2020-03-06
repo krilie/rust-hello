@@ -153,5 +153,26 @@ fn clone_test() {
     let x = 5;
     let y = x; // 在栈上 克隆一份
     println!("x {} y {}", x, y);
+    println!("{}", s1.len());
 }
 
+fn change(some_string: &mut String) {
+    some_string.push_str(", world");
+}
+
+#[test]
+fn test_mut_str() {
+    let mut s = String::from("hello");
+    change(&mut s);
+    println!("{}", s);
+}
+
+
+#[test]
+fn test_slice() {
+    let s2 = "hello world";
+    let s = String::from("hello world");
+    let hello = &s[0..5]; // 切片
+    let world = &s[3..10];
+    println!("hello {} world {}", hello, world);
+}
