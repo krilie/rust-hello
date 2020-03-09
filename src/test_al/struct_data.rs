@@ -20,8 +20,10 @@ fn test_struct() {
     println!("{:?}", user2);
 }
 
+#[allow(dead_code)]
 struct Point(i32, i32, i32);
 
+#[allow(dead_code)]
 struct Color;
 
 mod rectangles {
@@ -32,15 +34,18 @@ mod rectangles {
     }
 
     impl Rectangle {
+        #[allow(dead_code)]
         fn area(&self) -> u32 {
             self.width * self.height
         }
+        #[allow(dead_code)]
         fn square(size: u32) -> Rectangle {
             Rectangle { width: size, height: size }
         }
     }
 
     impl Rectangle {
+        #[allow(dead_code)]
         fn show(&self) {
             println!("{:?}", self);
         }
@@ -53,10 +58,12 @@ mod rectangles {
         println!("{}", Rectangle { width: 3, height: 2 }.area());
     }
 
+    #[allow(dead_code)]
     fn area(width: u32, height: u32) -> u32 {
         width * height
     }
 
+    #[allow(dead_code)]
     fn area2(rectangle: &Rectangle) -> u32 {
         rectangle.height * rectangle.width
     }
@@ -65,20 +72,21 @@ mod rectangles {
 mod enums_test {
     #[derive(Debug)]
     enum IpAddrKind {
-        V4,
-        V6,
+        #[allow(dead_code)]V4,
+        #[allow(dead_code)]V6,
     }
 
     #[test]
     fn test_enum() {
-        let four = IpAddrKind::V4;
-        let six = IpAddrKind::V6;
+        #[allow(unused_assignments, unused_variables)] let four = IpAddrKind::V4;
+        #[allow(unused_assignments, unused_variables)] let six = IpAddrKind::V6;
         // println!("{}",four);
         // println!("{}",six);
         // let seven = Option::Some("Stringf");
         // println!("{}",seven);
     }
 
+    #[allow(dead_code)]
     enum Coin {
         Penny,
         Nickel,
@@ -86,6 +94,7 @@ mod enums_test {
         Quarter,
     }
 
+    #[allow(dead_code)]
     fn value_in_cents(coin: Coin) -> u8 {
         match coin {
             Coin::Penny => 1,
@@ -103,8 +112,6 @@ mod enums_test {
 }
 
 mod vec_test {
-    use std::process::id;
-
     // vector
     #[test]
     fn test_vector() {
@@ -125,8 +132,8 @@ mod vec_test {
         }
         let thrid = &v[3];
         println!("{}", thrid);
-        let thrids = v.get(3);
-        let thrids = v.get_mut(3);
+        #[allow(unused_variables)] let thrids = v.get(3);
+        #[allow(unused_variables)] let thrids = v.get_mut(3);
     }
 
     #[test]
@@ -151,6 +158,7 @@ mod vec_test {
 }
 
 mod map_hash {
+    #[allow(unused_imports)]
     use std::collections::{HashMap, BTreeMap};
 
     #[test]
@@ -209,7 +217,9 @@ mod map_hash {
 
 // 错误处理
 mod err_make {
+    #[allow(unused_imports)]
     use std::fs::File;
+    #[allow(unused_imports)]
     use std::io::{Error, ErrorKind};
 
     #[test]
@@ -231,7 +241,7 @@ mod err_make {
 
     #[test]
     fn panic_file2() {
-        let f = match File::open("hello.txt") {
+        #[allow(unused_variables)] let f = match File::open("hello.txt") {
             Ok(file) => file,
             Err(error) => panic!("error {:?}", error)
         };
@@ -240,7 +250,7 @@ mod err_make {
     // 创建一个文件
     #[test]
     fn panic_file3() {
-        let f = match File::open("hello.txt") {
+        #[allow(unused_variables)] let f = match File::open("hello.txt") {
             Ok(file) => file,
             Err(error) => match error.kind() {
                 ErrorKind::NotFound => match File::create("hello.txt") {
@@ -254,7 +264,7 @@ mod err_make {
 
     #[test]
     fn panic_file4() {
-        let f = File::open("hello.txt").unwrap_or_else(|err| {
+        #[allow(unused_variables)] let f = File::open("hello.txt").unwrap_or_else(|err| {
             if err.kind() == ErrorKind::NotFound {
                 File::create("hello.txt").unwrap_or_else(|err| {
                     panic!("{:?}", err);

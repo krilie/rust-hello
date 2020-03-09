@@ -13,6 +13,7 @@ fn cmp(a: i32, b: i32) {
         println!("{}<{}", a, b);
     });
 }
+
 pub fn test() {
     let (a, b) = (1, 2);
     cmp(a, b);

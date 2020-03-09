@@ -5,6 +5,7 @@ pub fn test_1() {
     c();
     println!("{:?}", s);
 }
+
 pub fn test_2() {
     let s = "hello";
     let c = move || println!("{:?}", s);
@@ -12,6 +13,7 @@ pub fn test_2() {
     c();
     println!("{:?}", s);
 }
+
 pub fn test_3() {
     let mut c: Vec<Box<dyn Fn()>> = vec![];
     boxed_close(&mut c);

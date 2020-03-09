@@ -7,6 +7,7 @@ pub fn test() {
     }
 }
 
+#[allow(dead_code)]
 pub fn linear_search<T>(arr: &[T], target: &T) -> Option<usize>
     where T: PartialEq
 {
@@ -18,7 +19,7 @@ pub fn linear_search<T>(arr: &[T], target: &T) -> Option<usize>
     Option::None
 }
 
-
+#[allow(dead_code)]
 pub fn linear_search2<T>(arr: &[T], obj: &T) -> Option<usize>
     where T: PartialEq
 {

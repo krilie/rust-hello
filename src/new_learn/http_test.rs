@@ -2,6 +2,7 @@ use std::{convert::Infallible, net::SocketAddr};
 use hyper::{Body, Request, Response, Server};
 use hyper::service::{make_service_fn, service_fn};
 
+#[allow(dead_code)]
 async fn handle(_: Request<Body>) -> Result<Response<Body>, Infallible> {
     Ok(Response::new("Hello, World!".into()))
 }
@@ -19,7 +20,4 @@ pub async fn test_hyper() {
     if let Err(e) = server.await {
         eprintln!("server error: {}", e);
     }
-
-
-
 }

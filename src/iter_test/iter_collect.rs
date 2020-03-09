@@ -20,9 +20,9 @@ pub fn test3() {
     println!(":{:?}", arr.into_iter().fold(0, |acc, x| acc + x));
 }
 
-pub fn test4(){
-    let arr:Vec<i32> = vec![1i32,2i32,3i32];
-    let arr2 = arr.iter().map(|x|*x as u32).collect::<Vec<u32>>();
+pub fn test4() {
+    let arr: Vec<i32> = vec![1i32, 2i32, 3i32];
+    let arr2 = arr.iter().map(|x| *x as u32).collect::<Vec<u32>>();
     println!("{:?}", arr2);
 }
 

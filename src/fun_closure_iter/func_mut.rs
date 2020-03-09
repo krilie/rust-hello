@@ -2,9 +2,11 @@ fn modify(mut v: Vec<u32>) -> Vec<u32> {
     v.push(42);
     v
 }
+
 fn modify_mut(v: &mut [u32]) {
     v.reverse();
 }
+
 pub fn test() {
     let v = vec![1, 2, 3];
     let v = modify(v);
@@ -45,7 +47,7 @@ pub fn test4() {
 
 pub fn test5() {
     use std::ops::Mul;
-    fn square<T: Mul<T, Output = T>>(x: T, y: T) -> T {
+    fn square<T: Mul<T, Output=T>>(x: T, y: T) -> T {
         x * y
     }
     let a = square(37, 41);

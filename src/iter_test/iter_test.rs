@@ -4,6 +4,7 @@ pub fn test() {
         println!("{:?}", x);
     }
 }
+
 pub fn test2() {
     let v = vec![1, 2, 3, 23, 12, 23];
     {

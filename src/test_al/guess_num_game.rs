@@ -1,6 +1,8 @@
 use std::io;
 use rand::Rng;
+#[allow(unused_imports)]
 use std::cmp::Ordering;
+#[allow(unused_imports)]
 use std::thread::yield_now;
 
 pub fn test() {
@@ -20,11 +22,11 @@ pub fn test() {
 
 #[test]
 pub fn show_x_y() {
-    const pi: u32 = 999;
-    println!("pi {}", pi);
-    let mut x = 5;
+    const PI: u32 = 999;
+    println!("pi {}", PI);
+    #[allow(unused_variables, unused_mut)] let mut x = 5;
     let y = 10;
-    x = 6;
+    // x = 6;
     let x: i128 = 90;
     println!("x={},y={}", x, y);
     let t: bool = true;
@@ -156,6 +158,7 @@ fn clone_test() {
     println!("{}", s1.len());
 }
 
+#[allow(dead_code)]
 fn change(some_string: &mut String) {
     some_string.push_str(", world");
 }
@@ -170,7 +173,7 @@ fn test_mut_str() {
 
 #[test]
 fn test_slice() {
-    let s2 = "hello world";
+    #[allow(unused_variables, unused_mut)] let s2 = "hello world";
     let s = String::from("hello world");
     let hello = &s[0..5]; // 切片
     let world = &s[3..10];

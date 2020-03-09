@@ -1,10 +1,10 @@
 pub fn test() {
     #[allow(unused_variables)]
-    let a = "hello";
+        let a = "hello";
     #[allow(unused_variables)]
-    let b = "rust";
+        let b = "rust";
     #[allow(unused_variables)]
-    let c = "world";
+        let c = "world";
     let d = c;
     println!("{:?}", d);
 }
@@ -20,9 +20,11 @@ pub mod borrow_test {
         v[0] = 3;
         v
     }
+
     fn bar(v: &mut [i32; 3]) {
         v[0] = 3;
     }
+
     pub fn test() {
         let mut v = [1, 2, 3];
         foo(v);

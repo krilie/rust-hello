@@ -4,7 +4,8 @@ mod type_system;
 mod thread_test;
 mod http_test;
 
-pub fn test(){
+#[allow(dead_code)]
+pub fn test() {
     thread_test::test();
     http_test::test_hyper();
 }

@@ -1,4 +1,3 @@
-
 #[test]
 fn number_test() {
     println!("{:?}", std::f32::INFINITY);
@@ -7,7 +6,7 @@ fn number_test() {
     println!("{:?}", std::f32::MIN);
     println!("{:?}", std::f32::MAX);
     let guid = "852f4dde-4dfa-4874-a9cb-a866eb4a5052 ";
-    println!("{}",guid);
+    println!("{}", guid);
 }
 
 #[test]
@@ -75,7 +74,7 @@ fn tuple_ls() {
 
 #[test]
 fn enum_test() {
-    #[warn(dead_code)]
+    #[allow(dead_code)]
     enum Number {
         Zero,
         One,
@@ -90,15 +89,16 @@ fn enum_test() {
 }
 
 #[test]
-fn vec_test(){
-    let mut v1 = vec![1,2,3,4,5];
+fn vec_test() {
+    let mut v1 = vec![1, 2, 3, 4, 5];
     println!("{:?}", v1.pop());
 }
+
 #[test]
-fn box_test(){
-    #[derive(PartialEq,Debug)]
-    struct TT(i32,i32);
-    let bb = Box::new(TT(32,32));
+fn box_test() {
+    #[derive(PartialEq, Debug)]
+    struct TT(i32, i32);
+    let bb = Box::new(TT(32, 32));
     let pbb = *bb;
 //    println!("{:?}", bb);
     println!("{}", pbb.0);

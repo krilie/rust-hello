@@ -28,6 +28,7 @@ pub fn test3() {
         }
     }
 }
+
 pub fn test4() {
     println!("===============");
     let mut v = vec![1, 2, 3, 4, 5, 6, 7, 8, 9];

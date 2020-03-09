@@ -15,14 +15,14 @@ pub fn test() {
     println!("...");
 }
 
-pub fn test2(){
+pub fn test2() {
     let mut v = vec![];
     for id in 0..5 {
-        let thread_name = format!("child-{}",id);
-        let size:usize = 3*1024;
+        let thread_name = format!("child-{}", id);
+        let size: usize = 3 * 1024;
         let _ = thread::Builder::new()
             .name(thread_name).stack_size(size);
-        let child = thread::spawn(move|| {
+        let child = thread::spawn(move || {
             println!("in child:{}", id);
             if id == 3 {
                 println!("3");

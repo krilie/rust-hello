@@ -1,3 +1,2 @@
-pub fn test(){
-
-}
+#[warn(dead_code)]
+pub fn test() {}

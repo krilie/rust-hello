@@ -1,4 +1,5 @@
 use std::str;
+
 pub fn test() {
     let tao = str::from_utf8(&[0xe9u8, 0x81u8, 0x93u8]).unwrap();
     println!("{}", tao);
@@ -10,7 +11,7 @@ pub fn test() {
     println!("{:?}", tao.is_alphabetic());
 }
 
-pub fn test2(){
+pub fn test2() {
     let mut a = String::from("foo工");
     println!("{:p}", a.as_ptr());
     println!("{:p}", &a);

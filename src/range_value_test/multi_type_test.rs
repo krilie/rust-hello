@@ -2,6 +2,7 @@
 fn move_coords(x: (i32, i32)) -> (i32, i32) {
     (x.0 + 1, x.1 + 2)
 }
+
 pub fn test() {
     let tuple: (&'static str, i32, char) = ("hello", 5, 'c');
     println!("{:?}", tuple);
@@ -13,12 +14,14 @@ pub fn test() {
     let (z, _) = move_coords(coords);
     println!("{}", z);
 }
+
 // 结构体
 #[derive(Debug, PartialEq)]
 struct Apple {
     pub name: &'static str,
     pub gender: u32,
 }
+
 impl Apple {
     pub fn static_show() {
         println!("apple hellll")
@@ -27,6 +30,7 @@ impl Apple {
         println!("==+++{:?}", self);
     }
 }
+
 pub fn test2() {
     let a = Apple {
         name: "aa",
@@ -37,32 +41,40 @@ pub fn test2() {
     Apple::static_show();
     //++++++++++++++++++++
 }
+
 //==================________
 #[derive(Debug)]
 struct Color(i32, i32, i32);
+
 pub fn test3() {
     let color = Color(1, 2, 3);
     println!("{:?}-{}-{}", color, color.0, color.2);
     let color2 = Color { 0: 1, 1: 2, 2: 30 };
     println!("{:?}-{}-{}", color2, color2.0, color2.2)
 }
+
 //+++++++++++++============
 #[derive(Debug)]
 struct Integer(u32);
+
 type Int = i32;
+
 pub fn test4() {
     let int = Integer(32);
     println!("{:?},{}", int, int.0);
     let int2: Int = 324;
     println!("{}", int2);
 }
+
 //--------------------
 #[derive(Debug)]
 struct Empty;
+
 pub fn test5() {
     let x = Empty;
     println!("{:?}", x);
 }
+
 // 枚举体
 #[derive(Debug)]
 enum Number {
@@ -102,6 +114,7 @@ pub fn test6() {
     let home = x(127, 0, 0, 1);
     println!("{:?}", home);
 }
+
 pub fn test7() {
     let s = &Some("hello".to_string());
     match s {
@@ -109,6 +122,7 @@ pub fn test7() {
         _ => println!("no some"),
     }
 }
+
 pub mod coll {
     use std::collections::{BTreeSet, BinaryHeap, HashSet};
 
@@ -120,6 +134,7 @@ pub mod coll {
         v1.push(2);
         println!("{:?}", v1);
     }
+
     pub fn test2() {
         use std::collections::VecDeque;
         let mut buf = VecDeque::new();
@@ -132,6 +147,7 @@ pub mod coll {
         }
         hello();
     }
+
     pub fn test_link_list() {
         use std::collections::LinkedList;
         let mut list = LinkedList::new();
@@ -139,6 +155,7 @@ pub mod coll {
         list.append(&mut list.clone());
         println!("{:?}", list);
     }
+
     // HashMap BTreeMap
     pub fn test_hash_map() {
         use std::collections::HashMap;
@@ -147,6 +164,7 @@ pub mod coll {
         hmap.insert(453, "aaa");
         println!("{:?}", hmap);
     }
+
     pub fn test_btree_map() {
         use std::collections::BTreeMap;
         let mut hmap = BTreeMap::new();
@@ -154,6 +172,7 @@ pub mod coll {
         hmap.insert(453, "aaa");
         println!("{:?}", hmap);
     }
+
     // HashSet BTreeSet
     pub fn test_set() {
         let mut hbooks = HashSet::new();
@@ -165,6 +184,7 @@ pub mod coll {
         hhbooks.insert(23);
         println!("{:?}", hhbooks);
     }
+
     // BinaryHeap
     pub fn test_b_heap() {
         let mut heap = BinaryHeap::new();
