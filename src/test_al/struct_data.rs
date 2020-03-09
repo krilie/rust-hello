@@ -171,7 +171,7 @@ mod map_hash {
         }
         s.get("ok");
         for x in s {
-            println!("{}:{}",x.0,x.1);
+            println!("{}:{}", x.0, x.1);
         }
     }
 
@@ -185,7 +185,85 @@ mod map_hash {
             println!("{} {}", x, y);
         }
     }
+
+    #[test]
+    fn test4() {
+        let mut scores = HashMap::new();
+        scores.insert(String::from("Blue"), 10);
+        scores.entry(String::from("Yellow")).or_insert(50);
+        scores.entry(String::from("Blue")).or_insert(50);
+        println!("{:?}", scores);
+    }
+
+    #[test]
+    fn test5() {
+        let text = "hello world wonderful world";
+        let mut map = HashMap::new();
+        for x in text.split_whitespace() {
+            let count = map.entry(x).or_insert(0);
+            *count += 1;
+        }
+        println!("{:?}", map);
+    }
 }
 
+// 错误处理
+mod err_make {
+    use std::fs::File;
+    use std::io::{Error, ErrorKind};
+
+    #[test]
+    fn panic_test() {
+        panic!("crash and burn");
+    }
+
+    #[test]
+    fn panic_test2() {
+        let v = vec![1, 2, 3];
+        v[99];
+    }
+
+    #[test]
+    fn panic_file() {
+        let f = File::open("hello.txt");
+        println!("{:?}", f);
+    }
+
+    #[test]
+    fn panic_file2() {
+        let f = match File::open("hello.txt") {
+            Ok(file) => file,
+            Err(error) => panic!("error {:?}", error)
+        };
+    }
+
+    // 创建一个文件
+    #[test]
+    fn panic_file3() {
+        let f = match File::open("hello.txt") {
+            Ok(file) => file,
+            Err(error) => match error.kind() {
+                ErrorKind::NotFound => match File::create("hello.txt") {
+                    Ok(file) => file,
+                    Err(err) => panic!("{:?}", err)
+                },
+                other => panic!("{:?}", other)
+            }
+        };
+    }
+
+    #[test]
+    fn panic_file4() {
+        let f = File::open("hello.txt").unwrap_or_else(|err| {
+            if err.kind() == ErrorKind::NotFound {
+                File::create("hello.txt").unwrap_or_else(|err| {
+                    panic!("{:?}", err);
+                })
+            } else {
+                panic!("{:?}", err);
+            }
+        });
+    }
+}
 
 
