@@ -320,4 +320,18 @@ mod err_make {
     }
 }
 
-
+mod iter_test{
+    #[test]
+    fn test_iter(){
+        let v = vec![1,2,3];
+        let viter = v.iter();
+        let total:i32 = viter.sum();
+        println!("total {}",total);
+    }
+    #[test]
+    fn test_iter2(){
+        let v = vec![1,2,3];
+        let v2: Vec<_>= v.iter().map(|x| x + 1).collect();
+        v2.iter().for_each(|x|println!("{}",x));
+    }
+}
