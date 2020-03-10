@@ -1,3 +1,6 @@
+use std::thread;
+use std::time::Duration;
+
 mod borrow_test;
 mod comprehensive;
 mod fun_closure_iter;
@@ -39,4 +42,17 @@ fn main() {
     mata_test::test();
     // new_learn::test();
     test_al::test();
+
+    thread::spawn(|| {
+        for i in 1..4 {
+            println!("spawn {}", i);
+            thread::sleep(Duration::from_secs(1));
+        }
+    });
+    for i in 1..4 {
+        println!("for {}", i);
+        thread::sleep(Duration::from_secs(1));
+    }
+
+
 }
