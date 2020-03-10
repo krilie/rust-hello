@@ -36,3 +36,49 @@ mod point2 {
         println!("{:?}", list);
     }
 }
+
+mod point3 {
+    #[derive(Debug)]
+    enum List {
+        Cons(i32, Rc<List>),
+        Nil,
+    }
+
+    use List::{Cons, Nil};
+    use std::rc::Rc;
+
+    #[test]
+    fn test2() {
+        let list = Rc::new(Cons(1, Rc::new(Cons(2, Rc::new(Cons(3, Rc::new(Nil)))))));
+        let b = Cons(3, Rc::clone(&list));
+        let c = Cons(3, Rc::clone(&list));
+        println!("{:?}", list);
+        println!("{:?}", b);
+        println!("{:?}", c);
+    }
+}
+
+mod point4 {
+    use std::rc::Rc;
+    use std::cell::{RefCell, Ref};
+    use crate::test_al::smart_pointer::point4::List::{Cons, Nil};
+
+    #[derive(Debug)]
+    enum List {
+        Cons(Rc<RefCell<i32>>, Rc<List>),
+        Nil,
+    }
+
+    #[test]
+    fn test_main() {
+        let value = Rc::new(RefCell::new(5));
+        let a = Rc::new(Cons(Rc::clone(&value), Rc::new(Nil)));
+        let b = Cons(Rc::new(RefCell::new(6)), Rc::clone(&a));
+        let c = Cons(Rc::new(RefCell::new(10)), Rc::clone(&a));
+        *value.borrow_mut() += 10;
+        println!("a {:?}", a);
+        println!("b {:?}", b);
+        println!("c {:?}", c);
+    }
+}
+
