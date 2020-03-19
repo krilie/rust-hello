@@ -60,7 +60,7 @@ mod point3 {
 
 mod point4 {
     use std::rc::Rc;
-    use std::cell::{RefCell, Ref};
+    use std::cell::{RefCell};
     use crate::test_al::smart_pointer::point4::List::{Cons, Nil};
 
     #[derive(Debug)]
