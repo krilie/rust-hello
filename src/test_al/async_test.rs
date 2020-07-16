@@ -1,3 +1,4 @@
+use hyper::body::Buf;
 
 async fn print_async(){
     println!("hello from print_async");
@@ -7,5 +8,4 @@ async fn print_async(){
 fn test(){
     let future = print_async();
     println!("hello from main");
-    let po = future.poll();
 }

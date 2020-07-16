@@ -22,6 +22,7 @@ mod example_learn;
 mod learn3;
 mod six_funcs;
 mod test_al;
+mod test_json;
 
 fn main() {
     learn::test();
