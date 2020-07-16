@@ -24,6 +24,7 @@ mod six_funcs;
 mod test_al;
 mod test_json;
 mod test_md5;
+mod test_time;
 
 fn main() {
     learn::test();

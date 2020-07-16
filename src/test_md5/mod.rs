@@ -5,7 +5,6 @@ extern crate rustc_hex;
 use self::crypto::digest::Digest;
 use self::crypto::sha3::Sha3;
 use self::crypto::md5::Md5;
-use rustc_hex::{ToHex, FromHex};
 
 #[test]
 fn test_rustc() {
