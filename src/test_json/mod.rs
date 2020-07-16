@@ -13,6 +13,13 @@ struct Point {
     ok_for_test: Option<String>,
 }
 
+#[derive(Serialize, Deserialize)]
+#[serde(untagged)]
+enum Message {
+    Request { id: String, method: String, params: String },
+    Response { id: String, result: String },
+}
+
 #[test]
 fn main_test_json() {
     let point = Point { x: 1, y: 2, z: Option::from(32), ok_for_test: None };
@@ -20,4 +27,12 @@ fn main_test_json() {
     println!("serialized = {}", serialized);
     let deserialized: Point = serde_json::from_str(&serialized).unwrap();
     println!("deserialized = {:?}", deserialized);
+
+    let msg = Message::Request {
+        id: "".to_string(),
+        method: "".to_string(),
+        params: "".to_string(),
+    };
+    let msg_str = serde_json::to_string(&msg).unwrap();
+    println!("{}", msg_str)
 }
