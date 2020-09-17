@@ -144,6 +144,55 @@ mod t6 {
         assert!(vec.par_iter().any(|n| *n > 8));
         assert!(!vec.par_iter().all(|n| *n <= 8));
         let b = vec.par_iter().all(|n| *n <= 8);
-        println!("{}",b)
+        println!("{}", b)
     }
+}
+
+// mod t532 {
+//     use futures::executor::block_on;
+//     async fn process() {
+//         println!("Hello world!");
+//     }
+//     #[test]
+//     fn test() {
+//         let future = process();
+//         block_on(future);
+//     }
+// }
+
+mod t332 {
+    fn display<T>(age: u32, print_info: T) where T: Fn(u32) {
+        print_info(age);
+    }
+
+    #[test]
+    fn main() {
+        let mut name = String::from("Ethan");
+
+        let print_info_closure = |age| {
+            println!("name is {}", name);
+            println!("age is {}", age);
+        };
+        println!("name out is {}",name);
+        let age = 18;
+        display(age, print_info_closure);
+    }
+
+    #[test]
+    fn test2(){
+        let lifttime_closure = |a, b|{
+            println!("{}", a);
+            println!("{}", b);
+            b
+        };
+        let a = String::from("abc");
+        let c;
+        {
+            let b = String::from("xyz");
+            c = lifttime_closure(&a, &b);
+        }
+        println!("{}", c); // 报错
+    }
+
+
 }
