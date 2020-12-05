@@ -9,3 +9,4 @@ edition = "2018"
 [dependencies]
 time = "0.1.12"
 regex = "0.1.41"
+rand = { git = "https://gitee.com/livo/rand.git" }
