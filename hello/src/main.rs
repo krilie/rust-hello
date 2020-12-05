@@ -22,7 +22,7 @@ pub fn vvvvv() {
 }
 
 #[test]
-fn one(){
+fn one() {
     let mut a: f64 = 1.0;
     let b = 2.0f32;
 
@@ -41,8 +41,8 @@ fn one(){
 }
 
 #[test]
-fn let_decode(){
-    let (a, mut b): (bool,bool) = (true, false); // 解构
+fn let_decode() {
+    let (a, mut b): (bool, bool) = (true, false); // 解构
     println!("a = {:?}, b = {:?}", a, b);
     //a 不可变绑定
     //a = false;
@@ -53,7 +53,7 @@ fn let_decode(){
 }
 
 #[test]
-fn let_22122(){
+fn let_22122() {
 // boolean type
     let t = true;
     let f: bool = false;
@@ -104,12 +104,12 @@ fn let_22122(){
 
 #[test]
 fn arrays() {
-    let mut array: [i32;3] = [0;3];
+    let mut array: [i32; 3] = [0; 3];
     array[1] = 1;
     array[2] = 2;
-    println!("{}",array[0]);
+    println!("{}", array[0]);
     for x in &array {
-        println!("{}",x)
+        println!("{}", x)
     }
 }
 
@@ -139,7 +139,7 @@ fn vecc() {
 fn str_test() {
     let hello = "Hello,world";
     let hello: &'static str = "Hello,world";
-    println!("{}",hello);
+    println!("{}", hello);
 }
 
 #[test]
@@ -227,7 +227,7 @@ fn graph() {
         }
 
         pub fn inside_fn() {
-            let p = Point {x:1, y:2};
+            let p = Point { x: 1, y: 2 };
             println!("{}, {}", p.x, p.y);
         }
     }
@@ -252,4 +252,128 @@ fn ennnu() {
     }
 
     let x: Message = Message::Move { x: 3, y: 4 };
+}
+
+#[test]
+fn ifff() {
+    let x = 5;
+    let y = if x == 5 { 10 } else { 15 };
+    println!("{}", y);
+}
+
+#[test]
+fn whilll() {
+    'outer: loop {
+        println!("Entered the outer loop");
+
+        'inner: loop {
+            println!("Entered the inner loop");
+            break 'outer;
+        }
+
+        println!("This point will never be reached");
+    }
+
+    println!("Exited the outer loop");
+}
+
+
+#[test]
+fn matchhhh() {
+    let day = 5;
+
+    match day {
+        0 | 6 => println!("weekend"),
+        1 ... 5 => println!("weekday"),
+        _ => println!("invalid"),
+    }
+}
+
+#[test]
+fn testmatch2() {
+    let x = 1;
+
+    match x {
+        e @ 1 ... 5 => println!("got a range element {}", e),
+        _ => println!("anything"),
+    }
+}
+
+#[test]
+fn matccccc() {
+    let x = 5;
+    let mut y = 5;
+
+    match x {
+        // the `r` inside the match has the type `&i32`
+        ref r => println!("Got a reference to {}", r),
+    }
+
+    match y {
+        // the `mr` inside the match has the type `&i32` and is mutable
+        ref mut mr => println!("Got a mutable reference to {}", mr),
+    }
+}
+
+#[test]
+fn matchhhhh() {
+    let pair = (0, -2);
+
+    match pair {
+        (0, y) => println!("x is `0` and `y` is `{:?}`", y),
+        (x, 0) => println!("`x` is `{:?}` and y is `0`", x),
+        _ => println!("It doesn't matter what they are"),
+    }
+}
+
+#[test]
+fn match4444() {
+    struct Point {
+        x: i32,
+        y: i32,
+    }
+
+    let origin = Point { x: 0, y: 0 };
+
+    match origin {
+        Point { x, .. } => println!("x is {}", x),
+    }
+
+    enum OptionalInt {
+        Value(i32),
+        Missing,
+    }
+
+    let x = OptionalInt::Value(5);
+
+    match x {
+        // 这里是 match 的 if guard 表达式，我们将在以后的章节进行详细介绍
+        OptionalInt::Value(i) if i > 5 => println!("Got an int bigger than five!"),
+        OptionalInt::Value(..) => println!("Got an int!"),
+        OptionalInt::Missing => println!("No such luck."),
+    }
+}
+
+#[test]
+fn letttt() {
+    let number = Some(7);
+    let mut optional = Some(0);
+
+// If `let` destructures `number` into `Some(i)`, evaluate the block.
+    if let Some(i) = number {
+        println!("Matched {:?}!", i);
+    } else {
+        println!("Didn't match a number!");
+    }
+
+// While `let` destructures `optional` into `Some(i)`, evaluate the block.
+    while let Some(i) = optional {
+        if i > 9 {
+            println!("Greater than 9, quit!");
+            optional = None;
+        } else {
+            println!("`i` is `{:?}`. Try again.", i);
+            optional = Some(i + 1);
+        }
+    }
 }
