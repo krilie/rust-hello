@@ -173,14 +173,14 @@ mod t332 {
             println!("name is {}", name);
             println!("age is {}", age);
         };
-        println!("name out is {}",name);
+        println!("name out is {}", name);
         let age = 18;
         display(age, print_info_closure);
     }
 
     #[test]
-    fn test2(){
-        let lifttime_closure = |a, b|{
+    fn test2() {
+        let lifttime_closure = |a, b| {
             println!("{}", a);
             println!("{}", b);
             b
@@ -191,8 +191,31 @@ mod t332 {
             let b = String::from("xyz");
             c = lifttime_closure(&a, &b);
         }
-        println!("{}", c); // 报错
+        // println!("{}", c); // 报错
+    }
+}
+
+mod t221 {
+    fn closure_inside() -> Box<dyn FnMut() -> ()>
+    {
+        let mut age = 1;
+        let mut name = String::from("Ethan");
+        let age_closure = move || {
+            name.push_str(" Yuan");
+            age += 1;
+            println!("name is {}", name);
+            println!("age is {}", age);
+        };
+        Box::new(age_closure)
     }
 
-
+    #[test]
+    fn main() {
+        let mut age_closure = closure_inside();
+        age_closure();
+        age_closure();
+        age_closure();
+        let mut age_closure = closure_inside();
+        age_closure();
+    }
 }
