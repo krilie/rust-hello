@@ -284,7 +284,7 @@ fn matchhhh() {
 
     match day {
         0 | 6 => println!("weekend"),
-        1 ... 5 => println!("weekday"),
+        1...5 => println!("weekday"),
         _ => println!("invalid"),
     }
 }
@@ -294,7 +294,7 @@ fn testmatch2() {
     let x = 1;
 
     match x {
-        e @ 1 ... 5 => println!("got a range element {}", e),
+        e @ 1...5 => println!("got a range element {}", e),
         _ => println!("anything"),
     }
 }
@@ -377,3 +377,186 @@ fn letttt() {
         }
     }
 }
+
+#[test]
+fn fun_test_o() {
+    fn add_one(x: i32) -> i32 {
+        x + 1
+    }
+    println!("{}", add_one(5));
+}
+
+#[test]
+fn pannnn() {
+    fn diverges() -> ! {
+        panic!("This function never returns!");
+    }
+    // diverges();
+    let x: i32 = diverges();
+    let y: String = diverges();
+}
+
+#[test]
+fn cloooo() {
+    let num = 5;
+    let plus_num = |x: i32| x + num;
+}
+
+#[test]
+fn cloooooooo() {
+    let mut num = 5;
+
+    {
+        let mut add_num = move |x: i32| num += x;   // 闭包通过move获取了num的所有权
+
+        add_num(5);
+    }
+
+// 下面的num在被move之后还能继续使用是因为其实现了Copy特性
+// 具体可见所有权(Owership)章节
+    assert_eq!(5, num);
+}
+
+
+mod funnnnn {
+    fn add_one(x: i32) -> i32 { x + 1 }
+
+    fn apply<F>(f: F, y: i32) -> i32
+        where F: Fn(i32) -> i32
+    {
+        f(y) * y
+    }
+
+    fn factory(x: i32) -> Box<dyn Fn(i32) -> i32> {
+        Box::new(move |y| x + y)
+    }
+
+    #[test]
+    fn tmain() {
+        let transform: fn(i32) -> i32 = add_one;
+        let f0 = add_one(2i32) * 2;
+        let f1 = apply(add_one, 2);
+        let f2 = apply(transform, 2);
+        println!("{}, {}, {}", f0, f1, f2);
+
+        let closure = |x: i32| x + 1;
+        let c0 = closure(2i32) * 2;
+        let c1 = apply(closure, 2);
+        let c2 = apply(|x| x + 1, 2);
+        println!("{}, {}, {}", c0, c1, c2);
+
+        let box_fn = factory(1i32);
+        let b0 = box_fn(2i32) * 2;
+        let b1 = (*box_fn)(2i32) * 2;
+        let b2 = (&box_fn)(2i32) * 2;
+        println!("{}, {}, {}", b0, b1, b2);
+
+        let add_num = &(*box_fn);
+        let translate: &Fn(i32) -> i32 = add_num;
+        let z0 = add_num(2i32) * 2;
+        let z1 = apply(add_num, 2);
+        let z2 = apply(translate, 2);
+        println!("{}, {}, {}", z0, z1, z2);
+    }
+}
+
+mod funcs {
+    struct Circle {
+        x: f64,
+        y: f64,
+        radius: f64,
+    }
+
+    impl Circle {
+        fn new(x: f64, y: f64, radius: f64) -> Circle {
+            Circle {
+                x: x,
+                y: y,
+                radius: radius,
+            }
+        }
+
+        fn area(&self) -> f64 {
+            std::f64::consts::PI * (self.radius * self.radius)
+        }
+    }
+
+    #[test]
+    fn main() {
+        let c = Circle { x: 0.0, y: 0.0, radius: 2.0 };
+        println!("{}", c.area());
+
+        // use associated function and method chaining
+        println!("{}", Circle::new(0.0, 0.0, 2.0).area());
+    }
+}
+
+mod ssss {
+    trait HasArea {
+        fn area(&self) -> f64;
+    }
+
+    struct Circle {
+        x: f64,
+        y: f64,
+        radius: f64,
+    }
+
+    impl HasArea for Circle {
+        fn area(&self) -> f64 {
+            std::f64::consts::PI * (self.radius * self.radius)
+        }
+    }
+
+    struct Square {
+        x: f64,
+        y: f64,
+        side: f64,
+    }
+
+    impl HasArea for Square {
+        fn area(&self) -> f64 {
+            self.side * self.side
+        }
+    }
+
+    fn print_area<T: HasArea>(shape: T) {
+        println!("This shape has an area of {}", shape.area());
+    }
+}
+
+#[test]
+fn enum_options() {
+    enum Option<T> {
+        Some(T),
+        None,
+    }
+    let x: Option<i32> = Option::Some(5);
+    let y: Option<f64> = Option::Some(5.0f64);
+}
+
+
+#[test]
+fn read_input() {
+    use std::io;
+
+    fn read_input() -> io::Result<()> {
+        let mut input = String::new();
+
+        io::stdin().read_line(&mut input)?;
+
+        println!("You typed: {}", input.trim());
+
+        Ok(())
+    }
+
+    read_input();
+}
+
+
+
+
+
+
+
+
