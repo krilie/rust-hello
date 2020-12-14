@@ -25,6 +25,32 @@ mod rc_arc {
         println!("{:?}", strong_five);
     }
 
+    mod arc_test{
+        use std::sync::Arc;
+        use std::thread;
+        use std::thread::sleep;
+        use std::time::Duration;
 
+        #[test]
+        fn main() {
+            let numbers: Vec<_> = (0..100u32).collect();
+            let shared_numbers = Arc::new(numbers);
+            let mut joins = vec![];
+            for _ in 0..10 {
+                let child_numbers = shared_numbers.clone();
+
+                let join = thread::spawn(move || {
+                    let local_numbers = &child_numbers[..];
+                    println!("{:?}", local_numbers);
+                    // Work with the local numbers
+                });
+                joins.push(join)
+            }
+            sleep(Duration::from_secs(4));
+            for x in joins {
+                x.join();
+            }
+        }
+    }
 
 }
