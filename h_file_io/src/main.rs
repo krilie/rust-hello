@@ -28,4 +28,8 @@ fn main() {
         }
         Err(e) => { println!("{}", e); }
     }
+
+    use std::fs::OpenOptions;
+    // 根据选项
+    let file = OpenOptions::new().write(false).truncate(false).read(true).open("foo.txt").unwrap();
 }
